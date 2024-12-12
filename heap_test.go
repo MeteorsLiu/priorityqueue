@@ -36,7 +36,7 @@ func (h *myHeap) Peek() int {
 	if h.Len() == 0 {
 		return 0
 	}
-	return (*h)[h.Len()-1]
+	return (*h)[0]
 }
 
 func (h myHeap) verify(t *testing.T, i int) {

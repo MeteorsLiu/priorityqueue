@@ -39,7 +39,7 @@ func (pq *PriorityQueue) Peek() *Item {
 	if pq.Len() == 0 {
 		return nil
 	}
-	return (*pq)[len(*pq)-1]
+	return (*pq)[0]
 }
 
 func (pq *PriorityQueue) Pop() *Item {

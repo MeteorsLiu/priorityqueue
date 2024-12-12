@@ -32,7 +32,6 @@ type Interface[T any] interface {
 	sort.Interface
 	Push(x T) // add x as element Len()
 	Pop() T   // remove and return element Len() - 1.
-	Peek() T  // peek return element Len() - 1 without removing.
 }
 
 // Init establishes the heap invariants required by the other routines in this package.
@@ -52,10 +51,6 @@ func Init[T any](h Interface[T]) {
 func Push[T any](h Interface[T], x T) {
 	h.Push(x)
 	up(h, h.Len()-1)
-}
-
-func Peek[T any](h Interface[T]) T {
-	return h.Peek()
 }
 
 // Pop removes and returns the minimum element (according to Less) from the heap.
